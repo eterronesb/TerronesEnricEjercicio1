@@ -30,9 +30,9 @@ public class Ejercicio1 {
              System.out.println("Numero de columnas incorrecta. Debe ser entre 1 y " +Max_Columnas);
          }
 
-         matriz = new int[][];
-         for (int i = 0; i < filas.lenght; i++) {
-            for (int j = 0; j < columnas.lenght; j++) {
+         matriz = new int[filas][columnas];
+         for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
                 matriz[i][j] = random.nextInt(9) + 1;
             }
         }
@@ -54,21 +54,67 @@ public class Ejercicio1 {
                     mostrarMatriz();
                     break;
                 case 2:
-                    ponerbomba(scanner);
+                    ponerBomba(scanner);
                     break;
                 default:
                     System.out.println("Opción no válida, elige otra opcion valida.");
+                    break;
             }
         }
     }
     private static void mostrarMatriz() {
         System.out.println("Contenido de la matriz:");
-        for (int i = 0; i < filas.length; i++){
-            for (int j = 0; j < columnas,lenght; j++){
+        for (int i = 0; i < filas; i++){
+            for (int j = 0; j < columnas; j++) {
                 System.out.println (matriz[i][j] + "");
             }
             System.out.println();
         }
     }
+    private static void ponerBomba (Scanner scanner){
+        int x,y;
+        while (true) {
+            System.out.println("Fila (0 a " + (filas - 1) +"): ");
+            x = scanner.nextInt();
+            System.out.println("Columna (0 a " + (columnas - 1) +"): ");
+            y = scanner.nextInt();
 
+            if(x >= 0 && x < filas && y>= 0 && y < columnas) {
+                break;
+            } else {
+                System.out.println("Coordenadas no válidas, intenta de nuevo.");
+            }
+        }
+        int explosion = 0;
+
+        for (int i = 0; i < columnas; i++) {
+            explosion += matriz[x][i];
+        }
+        for (int i = 0; i < filas; i++) {
+            explosion += matriz[i][y];
+        }
+        explosion -= matriz[x][y];
+        System.out.println("Daño de la explosión: " + explosion);
+
+        for (int i = 0; i < columnas; i++) {
+            matriz[x][i] =0;
+        }
+        for (int i = 0; i < filas; i++){
+            matriz[x][i] = 0;
+        }
+        explosiones[countExplosiones++] = explosion;
+
+        boolean finJuego = true;
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                if (matriz[i][j] != 0) {
+                    finJuego = false;
+                    break;
+                }
+            }
+        }
+        if (finJuego) {
+            System.out.println("Felicidades!! Todos los valores han sido eliminados.");
+        }
+    }
 }
