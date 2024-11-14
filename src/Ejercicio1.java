@@ -15,7 +15,7 @@ public class Ejercicio1 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.println("Introduce el número de filas:");
+        System.out.println("Introduce el número de filas:");//Pedimos las filas y columnas
         while (true) {
             filas = scanner.nextInt();
             if (filas > 0 && filas <= Max_Filas) break;
@@ -36,7 +36,7 @@ public class Ejercicio1 {
             }
         }
 
-        while (true) {
+        while (true) {//Creacion del menu
             System.out.println("[3] Ver ranking de explosiones");
             System.out.println("[2] Poner Bomba");
             System.out.println("[1] Mostrar matriz");
@@ -64,7 +64,7 @@ public class Ejercicio1 {
             }
         }
     }
-
+//Introducimos el codigo para cada caso del menu
     private static void mostrarMatriz() {
         System.out.println("Contenido de la matriz:");
         for (int i = 0; i < filas; i++) {
@@ -131,14 +131,14 @@ public class Ejercicio1 {
 
         int[] ranking = new int[countExplosiones];
         System.arraycopy(explosiones, 0, ranking, 0, countExplosiones);
-        ordenarArrayDescendente(ranking);
+        ordenarArrayDescendente(ranking);//Lo utilizamos para que se ordene de forma descendiente
 
         System.out.println("Ranking de explosiones:");
         for (int i = 0; i < countExplosiones; i++) {
             System.out.println((i + 1) + ". Daño de explosión: " + ranking[i]);
         }
     }
-
+//Creamos un bucle para que vaya actualizando los valores del ranking
     private static void ordenarArrayDescendente(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
