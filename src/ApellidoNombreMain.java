@@ -19,6 +19,26 @@ public class ApellidoNombreMain {
         System.out.println("[2] Favorites");
         System.out.println("[3] Fun Fact");
         System.out.println("[4] Salir");
-    }
-    }
+
+        if (scanner.hasNextInt()) {
+            option = scanner.nextInt();
+            scanner.hasNextLine();
+
+            switch (option) {
+                case 1:
+                    System.out.println("\n"+myProfile.getStory());
+                    break;
+                case 2:
+                    System.out.println("\n"+myProfile.getHobby()+myProfile.getFoods());
+                    break;
+                case 3:
+                    System.out.println("\nFn fact: "+ myProfile.getFunFacts());
+                    break;
+                case 4:
+                    System.out.println("Adios!!");
+                    break;
+                default:
+                    System.out.println("Seleccione una opcion (1,2,3,4)");
+            }
+        }
 }
