@@ -24,7 +24,6 @@ public class ApellidoNombreMain {
             option = scanner.nextInt();
             scanner.nextLine();
             //Captura y devuelve la opcion seleccionada
-
             switch (option) {
                 case 1:
                     System.out.println("\n"+myProfile.getStory());

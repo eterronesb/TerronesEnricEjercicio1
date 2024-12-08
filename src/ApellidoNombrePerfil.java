@@ -8,7 +8,6 @@ public class ApellidoNombrePerfil {
     private String foods;
     private String funFacts;
     //constructor de la clase Perfil
-
     public ApellidoNombrePerfil (String name, String story, String hobby, String foods, String funFacts){
 
         this.name = name;
