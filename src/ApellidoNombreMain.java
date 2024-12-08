@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class ApellidoNombreMain {
@@ -29,10 +29,11 @@ public class ApellidoNombreMain {
                     System.out.println("\n"+myProfile.getStory());
                     break;
                 case 2:
-                    System.out.println("\n"+myProfile.getHobby()+myProfile.getFoods());
+                    System.out.println("\n"+myProfile.getHobby());
+                    System.out.println("\n"+myProfile.getFoods());
                     break;
                 case 3:
-                    System.out.println("\nFn fact: "+ myProfile.getFunFacts());
+                    System.out.println("\nFun fact: "+ myProfile.getFunFacts());
                     break;
                 case 4:
                     System.out.println("Adios!!");
