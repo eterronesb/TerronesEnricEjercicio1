@@ -40,5 +40,12 @@ public class ApellidoNombreMain {
                 default:
                     System.out.println("Seleccione una opcion (1,2,3,4)");
             }
+        }else {
+            System.out.println("Entrada no válida.");
+            scanner.hasNextLine();
+            option = 0;
         }
+    } while (option != 4);
+        scanner.close();
+    }
 }
