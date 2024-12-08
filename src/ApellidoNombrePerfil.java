@@ -34,5 +34,4 @@ public class ApellidoNombrePerfil {
         return funFacts;
     }
 
-
 }
